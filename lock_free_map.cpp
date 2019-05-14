@@ -60,8 +60,8 @@ private:
 };
 
 void test_lock_free_map() {
-    typedef std::unordered_map<long, std::pair<long, std::string>> MomoInfoMap;
-    LockFreeMap<MomoInfoMap> lock_free_map(0.75);
+    typedef std::unordered_map<long, std::pair<long, std::string>> InfoMap;
+    LockFreeMap<InfoMap> lock_free_map(0.75);
     lock_free_map.push(123, std::make_pair(456, "789"));
     lock_free_map.push(456, std::make_pair(456, "789"));
     auto user_map = lock_free_map.share();
